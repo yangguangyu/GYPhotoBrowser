@@ -53,12 +53,12 @@
     layer.strokeEnd = 0;
     layer.strokeColor = [UIColor redColor].CGColor;
     layer.fillColor = [UIColor clearColor].CGColor;
-    layer.frame = CGRectMake(0, 0, 80, 80);
-    layer.position = self.center;
+    layer.frame = CGRectMake((self.frame.size.width-80)*0.5, (self.frame.size.height-80)*0.5, 80, 80);
+//        layer.position = cell.imageView.center;
     layer.backgroundColor = [UIColor blueColor].CGColor;
     [self.imageView.layer addSublayer:layer];
     
-    layer.lineWidth = 10;
+    layer.lineWidth = 5;
     layer.path = [UIBezierPath bezierPathWithOvalInRect:layer.bounds].CGPath;//这里不能用frame，只能是bounds
     
     
