@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "GYPhotoBrowserVC.h"
 
 @interface ViewController ()
 
@@ -19,10 +20,16 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    GYPhotoBrowserVC *vc = [[GYPhotoBrowserVC alloc] init];
+    vc.imageUrls = @[
+                     @"http://img.taopic.com/uploads/allimg/121203/267873-121203225I999.jpg",
+                     @"http://img.taopic.com/uploads/allimg/140316/235039-14031614000099.jpg"];
+    
+    
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
 }
 
 
