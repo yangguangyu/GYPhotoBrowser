@@ -103,15 +103,31 @@
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
-    _imageView.center = scrollView.center;
-    NSLog(@"%@---%@",NSStringFromCGPoint(scrollView.contentOffset),NSStringFromCGSize(scrollView.contentSize));
+//    _imageView.center = scrollView.center;
+    _imageView.center = [self centerOfScrollViewContent:scrollView];
+    NSLog(@"%@---%@xxxxxx%@",NSStringFromCGPoint(scrollView.contentOffset),NSStringFromCGSize(scrollView.contentSize),NSStringFromCGRect(_imageView.frame));
 }
+
+
+/*
+ 从别人代码copy的，为什么这里直接使用scrollView.center会出现放大之后，多出一些空白区域，而且imageView的有些区域也不能滚动到了
+ 通过打印可以发现_imageView的x是一个-180等的负数
+ */
+- (CGPoint)centerOfScrollViewContent:(UIScrollView *)scrollView
+{
+    CGFloat offsetX = (scrollView.bounds.size.width > scrollView.contentSize.width)?
+    (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5 : 0.0;
+    CGFloat offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height)?
+    (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5 : 0.0;
+    CGPoint actualCenter = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX,
+                                       scrollView.contentSize.height * 0.5 + offsetY);
+    return actualCenter;
+}
+
+//这里可以不要，缩放的时候并不会改变imageView的位置，不需要复原center，只是改变了transform，
 //- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
 //    view.center = scrollView.center;
 //}
-
-
-
 
 - (void)imageTaped:(UIGestureRecognizer *)tap {
     if ([self.delegate respondsToSelector:@selector(CollectionViewCell:didTapImageView:)]) {
