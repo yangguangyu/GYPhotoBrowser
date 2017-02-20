@@ -40,7 +40,16 @@
     [_scrollView addSubview:_imageView];
     [self.contentView addSubview:_scrollView];
     
+    //直接给cell添加一个手势就是可以响应的
+    UIGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapCell)];
+    [self addGestureRecognizer:tap1];
+    
 }
+
+- (void)tapCell {
+    NSLog(@"%s",__func__);
+}
+
 
 - (void)setImageUrl:(NSString *)imageUrl {
     _imageUrl = imageUrl;
@@ -76,6 +85,11 @@
         [layer removeFromSuperlayer];
         [self layoutSubviews];
     }];
+}
+
+//这里加了也没有用，貌似还是会被scrollView给拦截
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%@",touches);
 }
 
 

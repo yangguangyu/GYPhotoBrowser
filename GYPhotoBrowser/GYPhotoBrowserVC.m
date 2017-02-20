@@ -82,6 +82,11 @@
     return cell;
 }
 
+//这里加了没用，scrollView好像可以拦截点击事件
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self dismissViewControllerAnimated:self completion:nil];
+}
+
 
 - (void)CollectionViewCell:(GYCollectionViewCell *)cell didTapImageView:(UIImageView *)imageView {
     [self dismissViewControllerAnimated:YES completion:nil];
