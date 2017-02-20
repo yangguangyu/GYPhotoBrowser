@@ -15,8 +15,6 @@
 @interface GYPhotoBrowserVC () <UICollectionViewDelegate,UICollectionViewDataSource,GYCollectionViewCellDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
-
-
 @property (nonatomic, strong) UICollectionViewFlowLayout *layout;
 
 //@property (nonatomic, strong) NSArray *<#name#>;
@@ -76,20 +74,26 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     GYCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    
-    cell.contentView.backgroundColor = YGYRandomColor;
     cell.delegate = self;
     cell.imageUrl = _imageUrls[indexPath.item];
-
-    NSLog(@"%@",cell);
-    
-    
     return cell;
 }
 
 
 - (void)CollectionViewCell:(GYCollectionViewCell *)cell didTapImageView:(UIImageView *)imageView {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    //切换到下一张时，需要把之前的scale恢复
+    for (int i = 0; i < _collectionView.subviews.count; ++i) {
+        if ([_collectionView.subviews[i] isKindOfClass:[GYCollectionViewCell class]]) {
+            GYCollectionViewCell *cell = _collectionView.subviews[i];
+            cell.scrollView.zoomScale = 1;
+        }
+    }
+
+    
 }
 
 @end

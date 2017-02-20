@@ -112,6 +112,7 @@
 
 
 
+
 - (void)imageTaped:(UIGestureRecognizer *)tap {
     if ([self.delegate respondsToSelector:@selector(CollectionViewCell:didTapImageView:)]) {
         [self.delegate CollectionViewCell:self didTapImageView:(UIImageView *)tap.view];
