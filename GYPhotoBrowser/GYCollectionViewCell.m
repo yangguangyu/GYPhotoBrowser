@@ -34,20 +34,14 @@
     
     _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
     _imageView.userInteractionEnabled = YES;
-    UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTaped:)];
-    [_imageView addGestureRecognizer:tap];
     
     [_scrollView addSubview:_imageView];
     [self.contentView addSubview:_scrollView];
     
-    //直接给cell添加一个手势就是可以响应的
-    UIGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapCell)];
-    [self addGestureRecognizer:tap1];
+    //直接给cell添加一个手势就是可以响应的，不给imageView添加手势了
+    UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTaped:)];
+    [self addGestureRecognizer:tap];
     
-}
-
-- (void)tapCell {
-    NSLog(@"%s",__func__);
 }
 
 
