@@ -39,6 +39,18 @@
 		5A5EFD061E5A940800F15F59 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EFD031E5A940800F15F59 /* FLAnimatedImageView.m */; };
 		5A5EFD071E5A940800F15F59 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A5EFD041E5A940800F15F59 /* Info.plist */; };
 		5A5EFD0B1E5A966B00F15F59 /* GYCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EFD091E5A966B00F15F59 /* GYCollectionViewCell.m */; };
+		5A5EFD4A1E5B63EC00F15F59 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5EFD491E5B63EC00F15F59 /* libsqlite3.0.tbd */; };
+		5A5EFD4C1E5B641100F15F59 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5EFD4B1E5B641100F15F59 /* libc++.tbd */; };
+		5A5EFD4E1E5B643700F15F59 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5EFD4D1E5B643700F15F59 /* libstdc++.6.0.9.tbd */; };
+		5A9154951E60421700712E54 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9154941E60421700712E54 /* libz.tbd */; };
+		5A9154971E60422400712E54 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9154961E60422400712E54 /* ImageIO.framework */; };
+		5A9154991E60422F00712E54 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9154981E60422F00712E54 /* Accelerate.framework */; };
+		5A91549B1E60423A00712E54 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A91549A1E60423A00712E54 /* MobileCoreServices.framework */; };
+		5A91549D1E60424800712E54 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A91549C1E60424800712E54 /* QuartzCore.framework */; };
+		5A91549F1E60425400712E54 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A91549E1E60425400712E54 /* AssetsLibrary.framework */; };
+		5A9154A11E60426000712E54 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9154A01E60426000712E54 /* CoreFoundation.framework */; };
+		5A9154A31E60426C00712E54 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9154A21E60426C00712E54 /* libsqlite3.tbd */; };
+		5A9154A51E60428D00712E54 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9154A41E60428D00712E54 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +117,18 @@
 		5A5EFD041E5A940800F15F59 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A5EFD081E5A966B00F15F59 /* GYCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYCollectionViewCell.h; sourceTree = "<group>"; };
 		5A5EFD091E5A966B00F15F59 /* GYCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYCollectionViewCell.m; sourceTree = "<group>"; };
+		5A5EFD491E5B63EC00F15F59 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		5A5EFD4B1E5B641100F15F59 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		5A5EFD4D1E5B643700F15F59 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		5A9154941E60421700712E54 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		5A9154961E60422400712E54 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		5A9154981E60422F00712E54 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		5A91549A1E60423A00712E54 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5A91549C1E60424800712E54 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5A91549E1E60425400712E54 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		5A9154A01E60426000712E54 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		5A9154A21E60426C00712E54 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5A9154A41E60428D00712E54 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +136,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9154A51E60428D00712E54 /* UIKit.framework in Frameworks */,
+				5A9154A31E60426C00712E54 /* libsqlite3.tbd in Frameworks */,
+				5A9154A11E60426000712E54 /* CoreFoundation.framework in Frameworks */,
+				5A91549F1E60425400712E54 /* AssetsLibrary.framework in Frameworks */,
+				5A91549D1E60424800712E54 /* QuartzCore.framework in Frameworks */,
+				5A91549B1E60423A00712E54 /* MobileCoreServices.framework in Frameworks */,
+				5A9154991E60422F00712E54 /* Accelerate.framework in Frameworks */,
+				5A9154971E60422400712E54 /* ImageIO.framework in Frameworks */,
+				5A9154951E60421700712E54 /* libz.tbd in Frameworks */,
+				5A5EFD4E1E5B643700F15F59 /* libstdc++.6.0.9.tbd in Frameworks */,
+				5A5EFD4C1E5B641100F15F59 /* libc++.tbd in Frameworks */,
+				5A5EFD4A1E5B63EC00F15F59 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +159,7 @@
 			children = (
 				5A5EFC721E597B5200F15F59 /* GYPhotoBrowser */,
 				5A5EFC711E597B5200F15F59 /* Products */,
+				5A5EFD481E5B63EC00F15F59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +270,25 @@
 				5A5EFD041E5A940800F15F59 /* Info.plist */,
 			);
 			path = FLAnimatedImage;
+			sourceTree = "<group>";
+		};
+		5A5EFD481E5B63EC00F15F59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A9154A41E60428D00712E54 /* UIKit.framework */,
+				5A9154A21E60426C00712E54 /* libsqlite3.tbd */,
+				5A9154A01E60426000712E54 /* CoreFoundation.framework */,
+				5A91549E1E60425400712E54 /* AssetsLibrary.framework */,
+				5A91549C1E60424800712E54 /* QuartzCore.framework */,
+				5A91549A1E60423A00712E54 /* MobileCoreServices.framework */,
+				5A9154981E60422F00712E54 /* Accelerate.framework */,
+				5A9154961E60422400712E54 /* ImageIO.framework */,
+				5A9154941E60421700712E54 /* libz.tbd */,
+				5A5EFD4D1E5B643700F15F59 /* libstdc++.6.0.9.tbd */,
+				5A5EFD4B1E5B641100F15F59 /* libc++.tbd */,
+				5A5EFD491E5B63EC00F15F59 /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,6 +548,7 @@
 				5A5EFC891E597B5200F15F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

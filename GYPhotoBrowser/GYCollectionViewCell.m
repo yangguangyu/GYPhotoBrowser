@@ -7,7 +7,9 @@
 //
 
 #import "GYCollectionViewCell.h"
-#import "UIImageView+WebCache.h"
+#import "FLAnimatedImageView+WebCache.h"
+#import "FLAnimatedImage.h"
+//#import "YYAnimatedImageView.h"
 
 @interface GYCollectionViewCell () <UIScrollViewDelegate>
 
@@ -26,13 +28,15 @@
 
 
 - (void)setupUI {
-    _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];//这里也被坑了，不能用frame
+    _scrollView = [[UIScrollView alloc] init];//这里也被坑了，不能用frame
     _scrollView.backgroundColor = [UIColor redColor];
     _scrollView.maximumZoomScale = 2;
     _scrollView.minimumZoomScale = 0.5;
     _scrollView.delegate = self;
     
-    _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+//    _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+    _imageView = [[FLAnimatedImageView alloc] init];
+
     _imageView.userInteractionEnabled = YES;
     
     [_scrollView addSubview:_imageView];
@@ -67,7 +71,7 @@
     //    anim.fromValue = @(0);//动画是一个连续的，只有几个关键状态的点，而且还是有执行时间的，不能根据进度值灵活的控制界面的变化，还是要考绘图来完成
     
     
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:_imageUrl] placeholderImage:nil options:SDWebImageCacheMemoryOnly progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:_imageUrl] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
         CGFloat progress = (CGFloat)receivedSize / expectedSize;
         NSLog(@"%f",progress);
         
@@ -94,14 +98,21 @@
     
     //_imaggeView的大小需要依据图片来确定
     if (_imageView.image) {
+//        if (_imageView.image.size.width > _scrollView.frame.size.width) {
         
-        CGSize size =  _imageView.image.size;
-        CGFloat ratio =  self.bounds.size.width/size.width;
-        CGFloat width = _scrollView.frame.size.width;  //以宽度为基准，等比缩放
-        CGFloat height = size.height * ratio;
-        
-        _imageView.frame = CGRectMake(0, 0, width, height);
-        _imageView.center = _scrollView.center;
+            CGSize size =  _imageView.image.size;
+            CGFloat ratio =  self.bounds.size.width/size.width;
+            CGFloat width = _scrollView.frame.size.width;  //以宽度为基准，等比缩放
+            CGFloat height = size.height * ratio;
+            
+            _imageView.frame = CGRectMake(0, 0, width, height);
+            _scrollView.contentSize = _imageView.bounds.size;
+            _imageView.center = _scrollView.center;
+//        }
+//        else {
+//            _imageView.frame = CGRectMake(0, 0, _imageView.image.size.width, _imageView.image.size.height);
+//            _imageView.center = _scrollView.center;
+//        }
     }
     
 }
@@ -142,6 +153,5 @@
         [self.delegate CollectionViewCell:self didTapImageView:(UIImageView *)tap.view];
     }
 }
-
 
 @end

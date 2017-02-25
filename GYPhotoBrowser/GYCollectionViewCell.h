@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLAnimatedImageView.h"
 @class GYCollectionViewCell;
 @protocol GYCollectionViewCellDelegate <NSObject>
 
@@ -15,7 +16,8 @@
 @end
 
 @interface GYCollectionViewCell : UICollectionViewCell
-@property (strong, nonatomic) UIImageView *imageView;
+//@property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) FLAnimatedImageView *imageView;
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, weak) id<GYCollectionViewCellDelegate> delegate;
