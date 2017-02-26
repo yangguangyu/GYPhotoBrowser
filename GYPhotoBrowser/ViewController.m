@@ -21,14 +21,14 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    GYPhotoBrowserVC *vc = [[GYPhotoBrowserVC alloc] init];
-    vc.imageUrls = @[
+    NSArray *imageUrls = @[
                      @"http://ww2.sinaimg.cn/thumbnail/98719e4agw1e5j49zmf21j20c80c8mxi.jpg",
                      @"http://img.taopic.com/uploads/allimg/121203/267873-121203225I999.jpg",
                      @"http://img.taopic.com/uploads/allimg/140316/235039-14031614000099.jpg",
                      @"http://www.sinaimg.cn/dy/slidenews/52_img/2014_18/42283_345383_769322.gif"
                      
                      ];
+    GYPhotoBrowserVC *vc = [[GYPhotoBrowserVC alloc] initWithImageURLs:imageUrls index:3];
     
     
     [self presentViewController:vc animated:YES completion:^{

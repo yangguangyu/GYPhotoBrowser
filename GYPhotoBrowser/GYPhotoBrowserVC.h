@@ -10,4 +10,6 @@
 
 @interface GYPhotoBrowserVC : UIViewController
 @property (nonatomic, strong) NSArray *imageUrls;
+
+- (instancetype)initWithImageURLs:(NSArray *)imageURLs index:(NSUInteger)index;
 @end

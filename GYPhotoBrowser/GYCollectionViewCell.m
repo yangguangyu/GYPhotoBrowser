@@ -29,7 +29,7 @@
 
 - (void)setupUI {
     _scrollView = [[UIScrollView alloc] init];//这里也被坑了，不能用frame
-    _scrollView.backgroundColor = [UIColor redColor];
+//    _scrollView.backgroundColor = [UIColor redColor];
     _scrollView.maximumZoomScale = 2;
     _scrollView.minimumZoomScale = 0.5;
     _scrollView.delegate = self;
